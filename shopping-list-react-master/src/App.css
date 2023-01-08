@@ -1,0 +1,15 @@
+.main-div {
+  margin: 3rem auto;
+  width: 90%;
+  max-width: 40rem;
+  position: relative;
+}
+.delete-btn {
+  background-color: red;
+  border-color: red;
+}
+.delete-btn:hover {
+  background-color: white;
+  border-color: white;
+  color: red;
+}

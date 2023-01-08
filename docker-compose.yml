@@ -1,0 +1,24 @@
+services:
+  serverapp:
+    build: ./shopping-list-api
+    image: shopping-list-api
+    container_name: shopping-list-api
+    ports:
+      - "5000:5000"
+    env_file: ./shopping-list-api/.env
+    networks:
+      - app-network
+  clientapp:
+    build: ./shopping-list-react-master
+    image: shopping-list-react
+    container_name: shopping-list-react
+    depends_on:
+      - serverapp
+    ports:
+      - "3000:3000"
+    networks:
+      - app-network
+
+networks:
+    app-network:
+        driver: bridge
